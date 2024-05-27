@@ -1,21 +1,28 @@
-import { Image, StyleSheet, Platform, SafeAreaView, Text, TextInput, Button,Pressable } from 'react-native';
+import { Image, StyleSheet, Platform, SafeAreaView, Text, TextInput, Button,Pressable, View } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { router } from 'expo-router';
+import dayjs from 'dayjs';
+import id from 'dayjs/locale/id';
 
 export default function Index() {
+  const today = dayjs().locale(id)
   return (
-    <SafeAreaView style={{ minHeight: '100%', justifyContent: 'center', paddingHorizontal: 50, backgroundColor: '#fff', gap: 16 }}>
-      <Text style={{ fontWeight: 'bold', fontSize: 24, marginBottom: 24 }}>Login</Text>
-      <TextInput placeholder='Username' style={{ borderWidth: 1, borderRadius: 16, borderColor: '#ddd', paddingVertical: 8, paddingHorizontal: 16 }} />
-      <TextInput placeholder='Password' style={{ borderWidth: 1, borderRadius: 16, borderColor: '#ddd', paddingVertical: 8, paddingHorizontal: 16, marginBottom: 24 }} />
-      <Pressable style={{backgroundColor:"blue",padding:13,borderRadius:16}} onPress={() => router.push('home')}  >
-        <Text style={{color:"white",textAlign:"center",fontWeight:"bold",}}>Login</Text>
-      </Pressable>
-    </SafeAreaView>
+<View style={{margin:20, backgroundColor:'white',borderRadius:5,padding:10,marginTop:70, flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
+  <View>
+  <Text style={{marginTop:10}}>TAGIHAN INTERNET</Text>
+  <Text style={{marginTop:40,fontSize:24,fontWeight:'bold'}}>Rp 85.000</Text>
+  <Text style={{color:'grey',marginTop:5}}>Bayar sebelum 20 {today.format('MMMM YYYY')}</Text>
+  </View>
+ 
+  <Pressable style={{margin:20,backgroundColor:'blue',borderRadius:5,padding:10, width:100, }}>
+    <Text style={{textAlign:'center',color:'white'}}>BAYAR</Text>
+  </Pressable>
+</View>
+
   );
 }
 

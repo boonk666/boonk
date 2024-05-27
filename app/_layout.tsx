@@ -31,6 +31,10 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="home" options={{ headerShown: false }} />
+        <Stack.Screen name="cektagihan"  options={{ title:'Cek Tagihan' }} />
+        <Stack.Screen name="keluhan"  options={{ title:'Keluhan' }} />
+        <Stack.Screen name="riwayatpembayaran"  options={{ title:'Riwayat Pembayaran' }} />
+        <Stack.Screen name="profil"  options={{ title:'Profil' }} />
       </Stack>
     </ThemeProvider>
   );
