@@ -18,8 +18,7 @@ export default function Index() {
   <Text style={{color:'grey',marginTop:5}}>Bayar sebelum 20 {today.format('MMMM YYYY')}</Text>
   </View>
  
-  <Pressable style={{margin:20,backgroundColor:'blue',borderRadius:5,padding:10, width:100, }}onPress={() => router.push('bayar')}>
-    
+  <Pressable style={{margin:20,backgroundColor:'blue',borderRadius:5,padding:10, width:100, }}>
     <Text style={{textAlign:'center',color:'white'}}>BAYAR</Text>
   </Pressable>
 </View>

@@ -7,10 +7,6 @@ export default function Home() {
             name: 'Cek Tagihan',
             image: require('@/assets/images/tagihan.jpg'),
             href: 'cektagihan'
-
-            
-            
-            
         },
         {
             name: 'Riwayat Pembayaran',

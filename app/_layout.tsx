@@ -35,6 +35,7 @@ export default function RootLayout() {
         <Stack.Screen name="keluhan"  options={{ title:'Keluhan' }} />
         <Stack.Screen name="riwayatpembayaran"  options={{ title:'Riwayat Pembayaran' }} />
         <Stack.Screen name="profil"  options={{ title:'Profil' }} />
+        <Stack.Screen name="bayar" options={{title:'Bayar'}}/>
       </Stack>
     </ThemeProvider>
   );
