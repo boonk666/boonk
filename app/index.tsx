@@ -15,6 +15,7 @@ export default function Index() {
       const response = await axios.post(process.env.EXPO_PUBLIC_API_URL + '/api/login',{username,password})
 
       await AsyncStorage.setItem('token', response.data.token)
+      await AsyncStorage.setItem('nama_pelanggan', response.data.nama_pelanggan)
 
       router.push('home')
     } catch (error){
