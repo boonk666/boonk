@@ -1,5 +1,6 @@
 import { SafeAreaView, Text, TextInput,Pressable, View,} from 'react-native';
-import Toast from 'react-native-root-toast'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 import { router } from 'expo-router';
 import axios, { AxiosError } from 'axios';
@@ -11,10 +12,13 @@ export default function Index() {
 
   const login=async ()=>{
     try{
-      const response=await axios.post(process.env.EXPO_PUBLIC_API_URL + '/api/login',{username,password})
+      const response = await axios.post(process.env.EXPO_PUBLIC_API_URL + '/api/login',{username,password})
+
+      await AsyncStorage.setItem('token', response.data.token)
 
       router.push('home')
     } catch (error){
+      console.log(error)
       // console.log(error instanceof AxiosError ? error.response?.data : 'error')
     }
    
