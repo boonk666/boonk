@@ -1,4 +1,5 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { RootSiblingParent } from 'react-native-root-siblings'
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -27,16 +28,18 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="home" options={{ headerShown: false }} />
-        <Stack.Screen name="cektagihan"  options={{ title:'Cek Tagihan' }} />
-        <Stack.Screen name="keluhan"  options={{ title:'Keluhan' }} />
-        <Stack.Screen name="riwayatpembayaran"  options={{ title:'Riwayat Pembayaran' }} />
-        <Stack.Screen name="profil"  options={{ title:'Profil' }} />
-        <Stack.Screen name="bayar" options={{title:'Bayar'}}/>
-      </Stack>
-    </ThemeProvider>
+    <RootSiblingParent>
+      <ThemeProvider value={DefaultTheme}>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="home" options={{ headerShown: false }} />
+          <Stack.Screen name="cektagihan"  options={{ title:'Cek Tagihan' }} />
+          <Stack.Screen name="keluhan"  options={{ title:'Keluhan' }} />
+          <Stack.Screen name="riwayatpembayaran"  options={{ title:'Riwayat Pembayaran' }} />
+          <Stack.Screen name="profil"  options={{ title:'Profil' }} />
+          <Stack.Screen name="bayar" options={{title:'Bayar'}}/>
+        </Stack>
+      </ThemeProvider>
+    </RootSiblingParent>
   );
 }
