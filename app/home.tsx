@@ -50,8 +50,13 @@ export default function Home() {
                 Selamat Datang Pelanggan Setia BSI.Net
             </Text>
         </View>
+        <View style={{ padding: 24 }}>
+            <View style={{ padding: 16, backgroundColor: '#facc15', borderRadius: 10 }}>
+                <Text>Waktu pembayaran kurang 1 hari lagi</Text>
+            </View>
+        </View>
         <FlatList
-            style={{ padding: 24, marginTop: 70}}
+            style={{ padding: 24, paddingTop: 0 }}
             data={menus}
             numColumns={2}
             contentContainerStyle={{ gap: 42 }}
