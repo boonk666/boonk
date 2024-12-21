@@ -1,7 +1,5 @@
 import { SafeAreaView, Text, TextInput,Pressable, View,} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
 import { router } from 'expo-router';
 import axios, { AxiosError } from 'axios';
 import { useState } from 'react';
@@ -20,7 +18,7 @@ export default function Index() {
       router.push('home')
     } catch (error){
       console.log(error)
-      // console.log(error instanceof AxiosError ? error.response?.data : 'error')
+      console.log(error instanceof AxiosError ? error.response?.data : 'error')
     }
    
   }
@@ -30,7 +28,7 @@ export default function Index() {
       <Text style={{fontSize:42,fontWeight:'bold',textAlign:"center" }}>BSI.NET</Text>
       <Text style={{ fontWeight: 'bold', fontSize: 24, marginBottom: 24, paddingTop:150, }}>Login</Text>
       <TextInput placeholder='Username' onChangeText={setusername} placeholderTextColor={'grey'} style={{ borderWidth: 1, borderRadius: 16, borderColor: '#ddd', paddingVertical: 8, paddingHorizontal: 16 }} />
-      <TextInput placeholder='Password' onChangeText={setpassword} placeholderTextColor={'grey'} style={{ borderWidth: 1, borderRadius: 16, borderColor: '#ddd', paddingVertical: 8, paddingHorizontal: 16, marginBottom: 24 }} />
+      <TextInput placeholder='Password' onChangeText={setpassword} placeholderTextColor={'grey'} style={{ borderWidth: 1, borderRadius: 16, borderColor: '#ddd', paddingVertical: 8, paddingHorizontal: 16, marginBottom: 24, }} />
       <Pressable style={{backgroundColor:"blue",padding:13,borderRadius:16}}onPress={login}   >
         <Text style={{color:"white",textAlign:"center",fontWeight:"bold",}}>Login</Text>
       </Pressable>
